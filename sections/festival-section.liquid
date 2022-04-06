@@ -1,0 +1,192 @@
+<style>
+  
+  .festival_main {
+    display: flex;
+    justify-content: space-between;
+    margin: 150px 0;
+  }
+  
+  .festival_main .common_product {
+    width: 31.5%;
+  }
+  
+  .box2.common_product .title_box {
+    background: #EEC5BE;
+    text-align: center;
+    padding: 60px 40px;
+    margin: 0 0 50px;
+  }
+  
+  .box2.common_product .title_box h2 {
+      font-size: 22px;
+      font-family: fangsong;
+      color: #000;
+      margin: 0 0 20px;
+  }
+  
+  .box2.common_product .title_box p {
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .box2.common_product .title_box a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: fangsong;
+    display: inline-block;
+    border-bottom: 1px solid black;
+    padding: 0 11px;
+    margin: 20px 0 0;
+  }
+  
+  .inner_product h2 {
+    font-size: 18px;
+    color: #000;
+    margin: 12px 0 0;
+  }
+  
+  .festival_main .box2 {
+    margin: -70px 0 0;
+  }
+  
+  .inner_product img {
+      width: 100%;
+  }
+  
+  
+</style>
+
+<div class="Container">
+  
+  <div class="festival_main">
+    
+    <div class="box1 common_product">
+      
+      <div class="inner_product">
+        <a href="{{ section.settings.product1link}}">
+          <img class="lazyload" src="{{section.settings.product1img | img_url:'master'}}" />
+          <h2>{{ section.settings.product1title}}</h2>
+        </a>
+      </div>
+      
+    </div>
+    
+    <div class="box2 common_product">
+      
+      <div class="title_box">
+        
+        <h2>{{ section.settings.title}}</h2>
+        {{ section.settings.content}}
+        <a href="{{ section.settings.btnurl}}">{{ section.settings.btntxt}}</a>
+        
+      </div>
+      
+      <div class="inner_product">
+        <a href="{{ section.settings.product2link}}">
+         <img class="lazyload" src="{{section.settings.product2img | img_url:'master'}}" />
+          <h2>{{ section.settings.product2title}}</h2>
+        </a>
+      </div>
+      
+    </div>
+    
+    <div class="box3 common_product">
+      
+     <div class="inner_product">
+        <a href="{{ section.settings.product3link}}">
+         <img class="lazyload" src="{{section.settings.product3img | img_url:'master'}}" />
+          <h2>{{ section.settings.product3title}}</h2>
+        </a>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Festival Section",
+    "settings": [
+	 {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title"
+    },
+	 {
+      "type": "richtext",
+      "id": "content",
+      "label": "Paragraph"
+    },
+	{
+      "type": "text",
+      "id": "btntxt",
+      "label": "Button Text"
+    },
+	{
+      "type": "text",
+      "id": "btnurl",
+      "label": "Button Link"
+    },
+	{
+      "type": "image_picker",
+      "id": "product1img",
+      "label": "Product 1 Image"
+    },
+	{
+      "type": "text",
+      "id": "product1title",
+      "label": "Product 1 title"
+    },
+	{
+      "type": "text",
+      "id": "product1link",
+      "label": "Product 1 link"
+    },
+	{
+      "type": "image_picker",
+      "id": "product2img",
+      "label": "Product 2 Image"
+    },
+	{
+      "type": "text",
+      "id": "product2title",
+      "label": "Product 2 title"
+    },
+	{
+      "type": "text",
+      "id": "product2link",
+      "label": "Product 2 link"
+    },
+	{
+      "type": "image_picker",
+      "id": "product3img",
+      "label": "Product 3 Image"
+    },
+	{
+      "type": "text",
+      "id": "product3title",
+      "label": "Product 3 title"
+    },
+	{
+      "type": "text",
+      "id": "product3link",
+      "label": "Product 3 link"
+    }
+	],
+	 "presets":[
+      {
+         "name":{
+            "en":"Festival Section"
+         },
+         "category":{
+            "en":"FestivalSection"
+         }
+      }
+   ]
+  }
+{% endschema %}
+

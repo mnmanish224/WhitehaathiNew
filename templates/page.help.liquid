@@ -1,0 +1,289 @@
+<style>
+  .shiping_policy_box {
+    display: block;
+    width: 87%;
+    margin: 0 auto;
+  }
+  
+  .main_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 2px solid #EEC5BE;
+    padding: 0 0 120px;
+  }
+  
+  .common_content h2 {
+    font-size: 30px;
+    color: #000;
+    font-family: 'Montserrat';
+  }
+  
+  .main_grid .left_box {
+    width: 45%;
+    margin-right: 50px;
+  }
+  
+  .main_grid .left_box:nth-child(2) {
+    margin-top: 72px;
+  }
+  
+  .common_content h3 {
+    font-size: 24px;
+    color: #E38F82;
+  }
+  
+  .common_content h3 img {
+    width: 38px;
+    margin-left: 30px;
+  }
+  
+  .common_content p {
+    color: #000;
+    font-size: 15px;
+    line-height: 32px;
+    font-family: 'Montserrat';
+    padding-right: 75px;
+  }
+  
+  .note_box {
+    background: #E7DAD3;
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 13px 30px;
+    font-family: 'Montserrat';
+    margin: 70px 0 0;
+  }
+  
+  .main_grid.half {
+    margin-top: 100px;
+    justify-content: flex-start;
+  }
+  
+  .main_grid.half .left_box {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+  
+  .common_content ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .common_content ul li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    font-size: 15px;
+    color: #000;
+    margin: 0 0 8px;
+  }
+  
+  .common_content ul li:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #E38F82;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 9px;
+  }
+  
+  .track_order_box {
+    width: 580px;
+    margin: 70px auto 0;
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .track_order_box h2 {
+    font-size: 24px;
+    color: #000;
+    margin: 0;
+  }
+  
+  .track_order_box p {
+    color: #E38F82;
+    font-size: 14px;
+    margin: 0 0 35px;
+  }
+  
+  .track_order_box input {
+    width: 100%;
+    border: 0;
+    background: #E7DAD3;
+    color: #000;
+    font-size: 14px;
+    padding: 13px 20px;
+    margin: 0 0 8px;
+  }
+  
+  .track_order_box button {
+    background: #E38F82;
+    width: 100%;
+    color: #fff;
+    font-family: georgia;
+    font-size: 20px;
+    padding: 4px 4px;
+  }
+  
+  /*** responsive ***/
+  
+  @media(max-width: 1299px) {
+    
+    .shiping_policy_box  {
+      width: 100%;
+    }
+    
+  }
+  
+  @media(max-width: 1199px) {
+    
+    .main_grid .left_box  {
+      margin-right: 13px;
+      width: 48%;
+    }
+    
+  }
+  
+  @media(max-width: 991px) {
+    .main_grid .left_box  {
+      width: 100% !important;
+      margin-right: 10px;
+    }
+  }
+  
+  @media(max-width: 599px) {
+    .common_content h2  {
+      font-size: 21px;
+    }
+    
+    .common_content h3 {
+      font-size: 20px;
+    }
+    
+    .common_content h3 img {
+      width: 29px;
+    }
+    
+    .note_box {
+      margin: 30px 0 0;
+    }
+    
+    .main_grid {
+      padding: 0 0 60px;
+    }
+    
+    .main_grid.half {
+      margin-top: 50px;
+    }
+    
+    .main_grid .left_box:nth-child(2) {
+      margin-top: 32px;
+    }
+    
+    .track_order_box h2 {
+      font-size: 18px;
+    }
+    
+    .track_order_box p {
+      margin: 0 0 24px;
+    }
+    
+    
+  }
+  
+  
+</style>
+
+<div class="Container help">
+  <header class="PageHeader">
+    <div class="SectionHeader SectionHeader--center">
+      <h1 class="SectionHeader__Heading Heading u-h1">{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <!--<div class="PageContent PageContent--narrow Rte">
+    {{ page.content }}
+  </div>-->
+  
+  <div class="shiping_policy_box">
+    
+    <div class="main_grid">      
+      <div class="left_box common_content">
+        <h2>SHIPPING POLICY</h2>
+        <h3>Processing time: <img class="lazyload" src="{{'clock.jpg' | asset_url}}" /></h3>
+        <p>Order veriﬁcation, tailoring, quality check and packaging. All orders (except customise necklace) are sent to 
+          the logistics for dispatch within 1-2 days after the order is placed.</p>
+        <div class="note_box">
+          NOTE: Customise Jewelry takes 7-10 working days 
+        </div>
+      </div>
+      
+      <div class="left_box common_content">
+        <h3>Shipping time: <img class="lazyload" src="{{'truck.jpg' | asset_url}}" /></h3>
+        <p>This refers to the time it takes for items to be shipped from our warehouse to the destination. Delivery at any place in India
+        genuinely takes maximum of 5-7 days to reach its destination.</p>
+      </div>
+      
+     </div>
+      
+    </div>  
+  
+   <div class="shiping_policy_box">
+    
+    <div class="main_grid half">      
+      <div class="left_box common_content">
+        <h2>REFUND POLICY</h2>
+        <h3>Terms of return: <img class="lazyload" src="{{'return-icon.png' | asset_url}}" /></h3>
+        <ul>
+          <li>To be eligible for a return, your item must be unused and in the same condition that you received it.</li>
+          <li>It must also be in the original packaging.</li>
+          <li>To complete your return, we require a receipt or proof of purchase.</li>
+          <li>In case you have received damaged/missing or incorrect item then kindly raise a return request along with the picture of that product.</li>
+          <li>Customer had to bear the shipping charges for returning their product which will be appx Rs. 60/-</li>
+          <li>In case of COD payments the COD charges will not be refunded.</li>
+          <li>If 7 days have gone by since the date of delivery, unfortunately we can’t offer you a refund or exchange. </li>
+        </ul>
+        <div class="note_box">
+          NOTE: Customize products are non-returnable unless the product delivered is damaged or defective.
+        </div>
+      </div>
+      
+      <div class="left_box common_content">
+        <h3>Terms of refund: <img class="lazyload" src="{{'refund-icons.png' | asset_url}}" /></h3>
+         <ul>
+          <li>Once the product is reached to us, your refund will be initiated.</li>
+          <li>The refund amount would take maximum of 3 business days and it is directly transferred to customers account.</li>
+        </ul>
+      </div>
+      
+      <div class="left_box common_content">
+        <h3>Terms of exchange: <img class="lazyload" src="{{'exchange.png' | asset_url}}" /></h3>
+        <ul>
+          <li>We offer FREE exchanges on all our Jewelry Items</li>
+          <li>Depending on where you live, the time it may take for your exchanged product to reach, may vary.</li>
+          <li>But max it lasts for 15 business days all over India.</li>
+        </ul>
+        <div class="note_box">
+          Any questions? Mail us on help@whitehaathi.com
+        </div>
+      </div>
+      
+     </div>
+      
+    </div>
+  
+  	
+  <div class="track_order_box">
+    <h2>TRACK YOUR RETURNS & EXCHANGES</h2>
+    <p>Track your order number and email/phone/zip to find your order:</p>
+    <input type="text" placeholder="Order Number" />
+    <input type="text" placeholder="Email/Phone/Zip" />
+    <button type="submit">FIND YOUR ORDER</button>
+  </div>
+          
+  
+</div>

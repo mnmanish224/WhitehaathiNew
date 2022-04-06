@@ -1,0 +1,154 @@
+<style>
+  .title1 {
+    display: block;
+    text-align: center;
+    margin: 70px 0 70px;
+  }
+  
+  .title1 h1 {
+    text-align: center;
+    display: inline-block;
+    border-bottom: 2px solid #e28e81;
+    text-transform: uppercase;
+    font-family: georgia;
+    font-size: 24px;
+    color: #000;
+  }
+  
+  .main_about {
+    display: flex;
+    width: 75%;
+    margin: auto;
+    background: #e6d9d2;
+  }
+  
+  .main_about .left_box {
+    width: 50%;
+  }
+  
+  .main_about .right_box {
+    width: 50%;
+  }
+  
+  .main_about .left_box {
+    width: 50%;
+    background: #e6d9d2;
+    padding: 90px 70px 0;
+  }
+  
+  .main_about .left_box p {
+    color: #000;
+    line-height: 32px;
+  }
+  
+  .abt_content {
+    display: block;
+    width: 75%;
+    margin: 40px auto 0;
+  }
+  
+  .abt_content p {
+    font-size: 18px;
+    color: #000;
+    line-height: 36px;
+  }
+  
+  .abt_content p {
+    font-size: 18px;
+    color: #000000;
+    line-height: 36px;
+  }
+  
+  .abt_content p span {
+    color: #e28e81;
+  }
+  
+  /***** media query ****/
+  
+  @media(max-width: 1199px){
+    
+    .main_about,
+    .abt_content {
+      width: 100%;
+    }
+    
+  }
+  
+  @media(max-width: 991px){
+    
+    .main_about {
+      flex-wrap: wrap;
+    }
+    
+    .main_about .left_box {
+      padding: 50px 30px 30px;
+    }
+    
+    .main_about .left_box,
+    .main_about .right_box {
+      width: 100%;
+    }
+    
+    .main_about .right_box img {
+      width: 100%;
+    }
+    
+  }
+  
+  @media(max-width: 599px){
+    
+    .abt_content p {
+      font-size: 16px;
+    }
+    
+  }
+  
+  
+</style>
+
+<div class="Container">
+  
+  <div class="title1"><h1 class="">Our Story</h1></div>
+  
+  <div class="main_about">
+    <div class="left_box">
+      <p>Born in 2021 in the heritage city of Calcutta,
+        White Haathi Designs was envisioned to
+        amalgamate heritage jewellery, luxury,
+        minimalism and timeless fashion. </p>
+      <p>WhiteHaathi or White Elephant symbolizes
+      strength, good luck, positivity and protection -
+      our brand represents the heart and soul in all
+      of the above in the form of raw, meaningful
+      emotions, individuality and our rich culture.</p>
+      <p>Love for design, hunger to revive, promote and
+      empower local craftsmanship and the desire to
+      create a medium of expression through art led
+      to our founder, Sakshi Agarwala curating a
+      dainty, yet bold capsule of luxe, silver jewellery
+      in the form of WhiteHaathi. Hailing from a city
+      that’s culturally rich and lled with artisans
+      who lack sustainable income, Sakshi is a rm
+      believer in the power of embracing one’s individuality and wanted to create something that
+      talks the language of love, rekindles the love
+      for heritage jewellery while being versatile and
+              having an everyday, classy appeal.</p>
+    </div>
+    <div class="right_box">
+      <img class="lazyload" src="{{'img1.jpg' | asset_url}}" />
+      <img class="lazyload" src="{{'img2.jpg' | asset_url}}" />
+    </div>
+  </div>
+  
+  <div class="abt_content">
+    <p>Our jewelry pieces are made with <span>92.5 sterling silver</span> , designed mindfully with symbolism and qualities like chemical-free, tarnish-resistant, and nickel-free. These attributes make them a perfect t for every skin type and preference. As a <span>100% silver neutral brand</span> ,
+	not only do we promise absolute transparency in who we are and what we do, we also believe in educating our customers about
+      where we create our jewellery, what we stand for and help them take great care of their timeless design.</p>
+    <p>Crafted to speak directly to the contemporary, modern Indian while making them feel content, inspired and eortlessly beautiful,
+our silver jewelry is also a token of culturally rich designs and age-old sentiments. An ode to the local art of our country, the many
+artisans who breathe life into our pieces, and the deep-rooted meaning behind our jewelry, WhiteHaathi encourages you to own
+      your imperfections, your visions, your voice, your style, and everything that you are and will be.</p>
+  </div>
+ 
+  
+</div>

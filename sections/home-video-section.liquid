@@ -1,0 +1,199 @@
+<style>
+  
+.vsection_man {
+  display: flex;
+  justify-content: left;
+  width: 78%;
+  margin: 90px auto;
+  align-items: center;
+  background: #E7DAD3;
+}
+  
+  .vsection_man h2.SectionHeader__Heading.Heading.u-h1 {
+    border: 0;
+    padding: 0;
+    font-family: Georgia;
+    font-weight: 400;
+  }
+  
+  .vsection_man p {
+    color: #000;
+    line-height: 29px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .vsection_man.flip-rows {
+    flex-direction: row-reverse;
+  }
+  
+.vsection_man .vsection_left {
+  	width: 50%;
+    text-align: left;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 30px;
+}
+  
+  .vsection_man.flip-rows .vsection_left {
+    padding-left: 60px;
+    padding-right: 80px;
+  }
+  
+  .vsection_man .vsection_left h2 {
+    text-align: left;
+  }
+  
+  .vsection_man .vsection_left a {
+    font-size: 18px;
+    border-bottom: 0;
+    color: #fff;
+    background: #E38F82;
+    padding: 6px 29px;
+    display: inline-block;
+    border-radius: 0px;
+    font-family: fangsong;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 40px 0 0;
+  }
+  
+  .vsection_man .vsection_right {
+    width: 50%;
+    padding-left: 0px;
+  }
+  
+  .vsection_man.flip-rows .vsection_right {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  .vsection_man .vsection_right video {
+    width: 100%;
+    height: 87vh !important;
+    object-fit: cover;
+    margin-bottom: -7px;
+  }
+  
+  .vsection_man .icon_sec {
+    width: 130px;
+    display: block;
+    margin: 0 0 40px;
+  }
+  
+  
+  @media(max-width: 1024px) {
+    
+    .vsection_man {
+      flex-wrap: wrap;
+    }
+    
+    .vsection_man .vsection_left {
+      padding-right: 0;
+	  margin: 0 0 20px !important; 
+      width: 100% !important;
+      padding-top: 50px;
+    }
+    
+    .vsection_man .vsection_right {
+      width: 100%;
+      padding-left: 0;
+  	}
+    
+    .vsection_man.flip-rows .vsection_left {
+        padding-left: 0px;
+        padding-right: 0px;
+      	width: 100% !important;
+    }
+    
+    .vsection_man.flip-rows .vsection_right {
+      padding-right: 0px;
+      padding-left: 0px;
+      width: 100% !important;
+    }
+    
+  }
+    
+  
+</style>
+
+
+<div class="Container">
+  
+  <div class="vsection_man {% if section.settings.reverse == true %}flip-rows {% endif %}">
+    
+    <div class="vsection_left">
+      {%- if section.settings.icon -%}
+      <img class="lazyload icon_sec" src="{{section.settings.icon | img_url:'master'}}" />
+      {%- endif -%}
+      
+      <h2 class="SectionHeader__Heading Heading u-h1">{{section.settings.videotitle}}</h2>
+      <p>{{section.settings.videodescription}}</p>
+      
+      {%- if section.settings.buttontitle != '' -%}
+      <a href="{{section.settings.buttonurl}}">{{section.settings.buttontitle}}</a>
+       {%- endif -%}
+    </div>
+    
+    <div class="vsection_right">
+      <video playsinline="playsinline" autoplay="autoplay" loop="loop" muted="muted" preload="metadata" aria-label="Classic Pearl Drop Earrings" style="height: 580.031px;"><source src="{{section.settings.videourl}}" type="video/mp4"></video>
+    </div>
+    
+  </div>
+  
+</div>
+
+
+{% schema %}
+  {
+    "name": "Home video section",
+    "settings": [
+		{
+            "type":"image_picker",
+            "id":"icon",
+            "label": "Choose Icon"
+         },
+		{
+            "type":"text",
+            "id":"videotitle",
+            "label": "Enter Title"
+         },
+		{
+            "type":"textarea",
+            "id":"videodescription",
+            "label": "Type Description"
+         },
+		{
+            "type":"text",
+            "id":"buttontitle",
+            "label": "Button Title"
+         },
+		{
+            "type":"url",
+            "id":"buttonurl",
+            "label": "Button Url"
+         },
+		{
+            "type":"text",
+            "id":"videourl",
+            "label": "Enter Video Url"
+         },
+		{
+            "type":"checkbox",
+            "id":"reverse",
+			"default": false,
+            "label": "Reverse column"
+         }
+	],
+    "presets": [
+    {
+      "name": {
+        "en": "Home video section"
+      },
+      "category": {
+        "en": "homevideosection"
+      }
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,154 @@
+<style>
+  
+  .newslatter_main {
+      display: flex;
+      flex-wrap: wrap;
+      width: 76%;
+      margin: 70px auto 110px;
+      align-items: flex-end;
+  }
+  
+  .newslatter_main .Newsletter__Inner {
+    width: 100%;
+    text-align: right;
+    justify-content: flex-end;
+  }
+  
+  .newslatter_main .left_box {
+    width: 40%;
+    text-align: left;
+  }
+  
+  .newslatter_main .left_box h2 {
+    font-size: 30px;
+    font-family: Georgia;
+    color: #000;
+    margin: 0 0 3px;
+    line-height: 32px;
+  }
+  
+  .newslatter_main .left_box p {
+      font-size: 17px;
+      color: #000;
+  }
+  
+  .newslatter_main .right_box {
+      width: 60%;
+  }
+  
+  .newslatter_main .right_box .Newsletter__Inner button.Form__Submit.Button.Button--primary {
+      margin: 0;
+      background: #e28e81;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 400;
+      border: 0;
+      opacity: 1;
+      width: auto;
+      padding: 9px 32px;
+  }
+  
+  .newslatter_main .right_box .Newsletter__Inner button.Form__Submit.Button.Button--primary:before {
+    opacity: 0;
+  }
+  
+  .newslatter_main .right_box .Newsletter__Inner input.Form__Input {
+      background: #E7DAD3;
+      border: 0;
+      color: #000;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 0 22px;
+      min-width: auto;
+      width: 62%;
+  }
+  
+  @media(max-width: 1199px) {
+    
+    .newslatter_main {
+      width: 93%;
+      align-items: center;
+    }
+    
+  }
+  
+   @media(max-width: 991px) {
+     
+      .newslatter_main .left_box {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 30px;
+      }
+     
+     .newslatter_main .right_box {
+       width: 100%;
+     }
+     
+     .newslatter_main {
+       margin: 50px auto 60px;
+     }
+     
+  }
+  
+  @media(max-width: 649px) {
+    .newslatter_main .right_box .Newsletter__Inner input.Form__Input {
+      width: 100% !important;
+      padding: 15px 20px;
+    }
+    
+    .newslatter_main .right_box .Newsletter__Inner button.Form__Submit.Button.Button--primary {
+      margin: 20px auto 0 !important;
+      display: block !important;
+    }
+    
+  }
+  
+  
+</style>
+
+<div class="Container">
+  
+  <div class="newslatter_main">
+    
+    <div class="left_box">
+      <h2>Newsletter</h2>
+      <p>Subscribe to recieve updates, get deals & more</p>
+    </div>
+    
+    <div class="right_box">
+      {%- form 'customer', id: newsletter_id, class: 'Newsletter Form' -%}
+      {%- if form.posted_successfully? -%}
+      <p class="Form__Alert Alert Alert--success">{{ 'home_page.newsletter.success' | t }}</p>
+      {%- else -%}
+      {%- if form.errors -%}
+      <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
+      {%- endif -%}
+
+      <div class="Newsletter__Inner">
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'home_page.newsletter.input' | t }}" placeholder="{{ 'home_page.newsletter.input' | t }}" required>
+        <button type="submit" class="Form__Submit Button Button--primary">{{ 'home_page.newsletter.submit' | t }}</button>
+      </div>
+      {%- endif -%}
+     {%- endform -%}
+    </div>
+    
+  </div>
+  
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Newslatter Home",
+    "settings": [],
+	"presets": [
+    {
+      "category": "Newslatter Home",
+      "name": "NewslatterHome",
+      "settings": {}
+    }
+  ]
+  }
+{% endschema %}
+

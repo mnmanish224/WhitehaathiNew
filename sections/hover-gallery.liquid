@@ -1,0 +1,113 @@
+<style>
+  
+ .hover_gallery_main {
+	display: block;
+	width: 100%;
+   	margin: 0 0 40px;
+}
+
+.hover_gallery_main ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.hover_gallery_main ul li {
+	list-style: none;
+	transition: flex 1s cubic-bezier(.29, 0, .2, 1) 0s,-ms-flex 1s cubic-bezier(.29, 0, .2, 1) 0s;
+    will-change: flex;
+	flex: 1 1 0%;
+    overflow: hidden;
+	position: relative;	
+}
+
+.hover_gallery_main ul li .inner_box {
+	height: 60vh;
+	width: 100%
+}
+
+.hover_gallery_main ul li img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: all 0.5s ease;
+	transform: scale(1);
+	transition-delay: 0.4s;
+  	max-width: 100%;
+}
+
+.hover_gallery_main ul li:hover {
+	flex: 5 1 0%;
+}
+
+.hover_gallery_main ul li:hover img {
+	transform: scale(1.1);
+}
+  
+</style>
+
+<div class="Container">
+  <div class="hover_gallery_main">
+    
+    	<header class="SectionHeader SectionHeader--center">
+          <div class="Container"><h2 class="SectionHeader__Heading Heading u-h1">{{section.settings.sectiontitle}}</h2></div>
+        </header>
+    	
+    <ul>
+      {% for block in section.blocks %}
+      <li>
+        <a href="{{block.settings.ImageUrl}}">
+          <div class="inner_box">
+            <img class="lazyload" src="{{block.settings.hoverimage | img_url:'master'}}" />
+          </div>
+        </a>
+      </li>
+      
+      {% endfor %}      
+    </ul>
+
+  </div>
+</div>
+              
+{% schema %}
+    
+  {
+   "name":"Hover Gallery Section",
+   "settings":[
+	{
+      "type":"text",
+      "id":"sectiontitle",
+      "label": "Title"
+     }
+   ],
+   "blocks":[
+      {
+         "type":"image",
+         "name": "Hover Image", 
+    	 "settings":[
+         {
+            "type":"image_picker",
+            "id":"hoverimage",
+            "label": "Choose Image"
+         },
+    	{
+            "type":"url",
+            "id":"ImageUrl",
+            "label": "Choose Url"
+         }
+      ]
+      }     
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"Hover Gallery Section"
+         },
+         "category":{
+            "en":"hovergallerysection"
+         }
+      }
+   ]
+}
+{% endschema %}
+

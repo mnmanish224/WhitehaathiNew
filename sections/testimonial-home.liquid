@@ -1,0 +1,197 @@
+<style>
+  
+  button.slick-prev.slick-arrow {
+    background: url({{'arrow-left.png' | asset_url}});
+    background-size: 20px;
+    background-repeat: no-repeat;
+  }
+  
+   button.slick-next.slick-arrow {
+    background: url({{'arrow-right.png' | asset_url}});
+    background-size: 20px;
+    background-repeat: no-repeat;
+  }
+  
+  .slick-prev, 
+  .slick-next {
+    width: 25px !important;
+   	height: 25px !important;
+  }
+  
+  .slick-prev:before, 
+  .slick-next:before {
+    content: '';
+    opacity: 0 !important;
+  }
+  
+  .slick-next {
+     right: -34px !important;
+  }
+  
+  .slick-prev {
+    left: -34px !important;
+  }
+  
+  @media(max-width: 768px) {
+    
+      .slick-next {
+        right: 0 !important;
+      }
+    
+    .slick-prev {
+      left: 0px !important;
+    }
+    
+    .testimonial_main ul li {
+      margin: 0 44px;
+    }
+    
+  }
+  
+</style>
+<link rel="stylesheet" href="{{ 'slick.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'slick-theme.css' | asset_url }}">
+
+<div class="Container">
+	
+  <div class="testimonial_main">
+    <header class="SectionHeader SectionHeader--center">
+          <div class="Container"><h2 class="SectionHeader__Heading Heading u-h1">{{section.settings.sectiontitle}}</h2></div>
+        </header>
+      <ul class="testimonial_slider">
+         {% for block in section.blocks %}
+          <li>
+              <img class="lazyload" src="{{block.settings.userimgimage | img_url:'master'}}" />
+            <h2>{{block.settings.Usernm}}</h2>
+            {{block.settings.content}}
+
+            {%- if block.settings.rating == "5str" -%}
+              <img class="list_icon lazyload" src="{{'5str.png' | asset_url}}" /> 
+            {%- endif -%}
+
+            {%- if block.settings.rating == "4str" -%}
+              <img class="list_icon lazyload" src="{{'4str.png' | asset_url}}" /> 
+            {%- endif -%}
+
+            {%- if block.settings.rating == "3str" -%}
+              <img class="list_icon lazyload" src="{{'3str.png' | asset_url}}" /> 
+            {%- endif -%}
+
+            {%- if block.settings.rating == "2str" -%}
+              <img class="list_icon lazyload" src="{{'2str.png' | asset_url}}" /> 
+            {%- endif -%}
+
+
+          </li>
+        {% endfor %}    
+      </ul>
+	</div>
+</div>
+
+
+<script src="{{ 'jquery.min.js' | asset_url }}"></script>
+<script src="{{ 'slick.min.js' | asset_url }}"></script>
+
+<script>
+  
+  $(".testimonial_slider").slick({
+        dots: false,
+    	arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+    	responsive: [
+		{
+		  breakpoint: 1024,
+		  settings: {
+			slidesToShow: 3,
+			slidesToScroll: 3,
+		  }
+		},
+		{
+		  breakpoint: 991,
+		  settings: {
+			slidesToShow: 2,
+			slidesToScroll: 2
+		  }
+		},
+		{
+		  breakpoint: 480,
+		  settings: {
+			slidesToShow: 1,
+			slidesToScroll: 1
+		  }
+		}
+	  ]
+   });
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Testimonial Home",
+    "settings": [
+	{
+      "type":"text",
+      "id":"sectiontitle",
+      "label": "Title"
+     }
+	],
+	"blocks":[
+      {
+         "type":"image",
+         "name": "Home Testimonials", 
+    	 "settings":[
+          {
+            "type":"text",
+            "id":"Usernm",
+            "label": "User Name"
+         },
+         {
+            "type":"image_picker",
+            "id":"userimgimage",
+            "label": "Choose Image"
+         },
+    	{
+            "type":"richtext",
+            "id":"content",
+            "label": "Content"
+         },
+		{
+          "type": "select",
+          "id": "rating",
+          "label": "Rating",
+          "options": [
+            {
+              "value": "5str",
+              "label": "5 Star"
+            },
+            {
+              "value": "4str",
+              "label": "4 Star"
+            },
+            {
+              "value": "3str",
+              "label": "3 Star"
+            },
+			{
+              "value": "2str",
+              "label": "2 Star"
+            }
+          ],
+          "default": "5str"
+        }
+      ]
+      }    
+   ],
+	"presets": [
+    {
+      "name": {
+        "en": "Testimonial Home"
+      },
+      "category": {
+        "en": "TestimonialHome"
+      }
+    }
+  ]
+  }
+{% endschema %}
